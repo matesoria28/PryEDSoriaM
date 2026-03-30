@@ -40,6 +40,7 @@ namespace PryEDSoriaM
         {
             frmColores frmColores = new frmColores();
             frmColores.ShowDialog();
+           
 
         }
 
