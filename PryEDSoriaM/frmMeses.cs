@@ -16,5 +16,37 @@ namespace PryEDSoriaM
         {
             InitializeComponent();
         }
+        private void frmMeses_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
+        }
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NomArchi = "Mesesmtxt";
+            x.grabar(txtNombre.Text);
+            x.Recorrer(lstMeses);
+            txtNombre.Text = "";
+        }
+
+       
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                btnGrabar.Enabled = false;
+            }
+            else
+            {
+                btnGrabar.Enabled = true;
+            }
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

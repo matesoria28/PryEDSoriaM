@@ -50,5 +50,17 @@ namespace PryEDSoriaM
             frmClientes.ShowDialog();
 
         }
+
+        private void carreraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCarreras x = new FrmCarreras();
+            x.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlumnos x = new frmAlumnos();
+            x.ShowDialog();
+        }
     }
 }

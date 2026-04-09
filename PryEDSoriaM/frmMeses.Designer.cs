@@ -30,7 +30,7 @@
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnListar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.lstMeses = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -41,6 +41,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(233, 20);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -51,14 +52,15 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
-            // btnListar
+            // btnLimpiar
             // 
-            this.btnListar.Location = new System.Drawing.Point(12, 69);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(135, 23);
-            this.btnListar.TabIndex = 2;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(12, 69);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(135, 23);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnGrabar
             // 
@@ -68,6 +70,7 @@
             this.btnGrabar.TabIndex = 3;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // lstMeses
             // 
@@ -85,12 +88,13 @@
             this.ClientSize = new System.Drawing.Size(322, 298);
             this.Controls.Add(this.lstMeses);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
             this.Name = "frmMeses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meses";
+            this.Load += new System.EventHandler(this.frmMeses_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +104,7 @@
 
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ListBox lstMeses;
     }

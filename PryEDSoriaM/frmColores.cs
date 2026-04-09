@@ -42,5 +42,10 @@ namespace PryEDSoriaM
         {
             btnGrabar.Enabled=false;
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
