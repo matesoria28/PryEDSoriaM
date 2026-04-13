@@ -47,7 +47,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(16, 16);
+            this.lblCodigo.Location = new System.Drawing.Point(12, 16);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(43, 13);
             this.lblCodigo.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 49);
+            this.lblNombre.Location = new System.Drawing.Point(12, 53);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lblCarrera
             // 
             this.lblCarrera.AutoSize = true;
-            this.lblCarrera.Location = new System.Drawing.Point(12, 91);
+            this.lblCarrera.Location = new System.Drawing.Point(12, 99);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(44, 13);
             this.lblCarrera.TabIndex = 2;
@@ -78,26 +78,27 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(93, 9);
+            this.txtCodigo.Location = new System.Drawing.Point(65, 12);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(351, 20);
             this.txtCodigo.TabIndex = 3;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(93, 46);
+            this.txtNombre.Location = new System.Drawing.Point(65, 46);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(351, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // btnGrabar
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(323, 127);
+            this.btnGrabar.Location = new System.Drawing.Point(369, 138);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(100, 23);
             this.btnGrabar.TabIndex = 5;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // dgvAlumnos
             // 
@@ -129,7 +130,10 @@
             // cmbCarrera
             // 
             this.cmbCarrera.FormattingEnabled = true;
-            this.cmbCarrera.Location = new System.Drawing.Point(93, 91);
+            this.cmbCarrera.Items.AddRange(new object[] {
+            "diseño grafico",
+            "Analista de sistemas"});
+            this.cmbCarrera.Location = new System.Drawing.Point(62, 91);
             this.cmbCarrera.Name = "cmbCarrera";
             this.cmbCarrera.Size = new System.Drawing.Size(351, 21);
             this.cmbCarrera.TabIndex = 7;

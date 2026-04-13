@@ -10,7 +10,7 @@ namespace PryEDSoriaM
     internal class clsArchivo
     {
         //hemos creado un campo
-        public string NomArchi= "Colores.txt";
+        public string NomArchi = "Colores.txt";
 
         //hemos creado algunos metodos
         public void grabar()
@@ -35,13 +35,14 @@ namespace PryEDSoriaM
             cmbDatos.Items.Clear();
             string DatoLeido = "";
             StreamReader AD = new StreamReader(NomArchi);
-            DatoLeido= AD.ReadLine();
+            DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
             {
                 cmbDatos.Items.Add(DatoLeido);
-                DatoLeido=AD.ReadLine();
+                DatoLeido = AD.ReadLine();
             }
-            AD.Close ();
+            cmbDatos.SelectedIndex = 0;
+            AD.Close();
         }
         public void Recorrer(ListBox lstDatos)
         {
@@ -56,24 +57,14 @@ namespace PryEDSoriaM
             }
             AD.Close();
         }
-        public void Recorrer(DataGridView dgvDatos)
-        {
-            dgvDatos.Rows.Clear();
-            string DatoLeido = "";
-            StreamReader AD = new StreamReader(NomArchi);
-            DatoLeido = AD.ReadLine();
-            while (DatoLeido != null)
-            {
-                dgvDatos.Rows.Add(DatoLeido);
-                DatoLeido = AD.ReadLine();
-            }
-            AD.Close();
-        }
+       
+        
         public void BorrarTodo()
         {
-            StreamWriter AD= new StreamWriter(NomArchi, false);
+            StreamWriter AD = new StreamWriter(NomArchi, false);
             AD.Close();
         }
+
         public void Grabar(String cod, String nom, String deu)
         {
             StreamWriter AD = new StreamWriter(NomArchi, true); //Abrir AD para escritura
@@ -84,7 +75,22 @@ namespace PryEDSoriaM
             AD.WriteLine(deu);//escribir el contenido de la variable + enter
             AD.Close(); //cerrar AD
         }
-    }
 
-   
+        public void Recorrer(DataGridView Grilla)
+        {
+            string DatoLeido;
+            Grilla.Rows.Clear();
+            StreamReader AD = new StreamReader(NomArchi);
+            DatoLeido = AD.ReadLine();
+            while (DatoLeido != null)
+            {
+                Grilla.Rows.Add(DatoLeido.Split(';'));
+                DatoLeido = AD.ReadLine();
+            }
+            AD.Close();
+        }
+
+       
+
+    }
 }   

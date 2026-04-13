@@ -16,5 +16,13 @@ namespace PryEDSoriaM
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo Alumnos= new clsArchivo();
+            Alumnos.NomArchi = "Clientes.csv";
+            Alumnos.Grabar(txtCodigo.Text, txtNombre.Text, cmbCarrera.Text);
+            Alumnos.Recorrer(dgvAlumnos);
+        }
     }
 }
