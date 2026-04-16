@@ -62,5 +62,11 @@ namespace PryEDSoriaM
             frmAlumnos Alumnos = new frmAlumnos();
             Alumnos.ShowDialog();
         }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCola Cola = new frmCola();
+            Cola.ShowDialog();
+        }
     }
 }

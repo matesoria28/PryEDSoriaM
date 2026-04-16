@@ -20,8 +20,9 @@ namespace PryEDSoriaM
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
+            x.NomArchi = "Colorestxt";
             x.grabar(txtNombre.Text);
-            MessageBox.Show("Datos Grabados");
+            x.Recorrer(lstColores);
             txtNombre.Text = "";
         }
 
@@ -38,14 +39,13 @@ namespace PryEDSoriaM
 
         }
 
-        private void frmColores_Load(object sender, EventArgs e)
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
-            btnGrabar.Enabled=false;
+            lstColores.Items.Clear();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
     }
 }
