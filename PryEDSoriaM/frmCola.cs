@@ -17,54 +17,43 @@ namespace PryEDSoriaM
             InitializeComponent();
         }
 
-        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        clsCola ColaEspera= new clsCola(); //Global
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
+            clsNodo Persona=new clsNodo();
+            Persona.Cod = Convert.ToInt32(txtCodigo.Text);
+            Persona.Nom = txtNombre.Text;
+            Persona.Tra = txtTramite.Text;
 
+            ColaEspera.Agregar(Persona);
+            ColaEspera.Recorrer(dgvCola);
+            ColaEspera.Agregar(Persona);
+            ColaEspera.Agregar(Persona);
+
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (ColaEspera.Primero != null)
+            { 
+                lblCodigo3.Text=ColaEspera.Primero.Cod.ToString();
+                lblNombre3.Text = ColaEspera.Primero.Nom;
+                lblTramite3.Text = ColaEspera.Primero.Tra;
 
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmCola_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstElemento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+                ColaEspera.Eliminar();
+                ColaEspera.Recorrer(dgvCola);
+                ColaEspera.Recorrer("Cola.csv");
+   
+            }
+            else
+            {
+                lblCodigo3.Text = "";   
+                lblNombre3.Text = "";
+                lblTramite3.Text = "";
+            }
         }
     }
 }

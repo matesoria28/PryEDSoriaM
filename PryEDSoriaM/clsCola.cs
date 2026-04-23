@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEDSoriaM
 {
@@ -82,7 +83,27 @@ namespace PryEDSoriaM
             }
         }
 
+        public void Recorrer(String NombreArchivo)
+        { 
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter(NombreArchivo,false,Encoding.UTF8);
+            AD.WriteLine("Lista de espera/n");
+            AD.WriteLine("Codigo;Nombre;Tramite");
+            while (aux != null)
+            {
+                AD.Write(aux.Cod);
+                AD.Write(";");
+                AD.Write(aux.Nom);
+                AD.Write(";");
+                AD.Write(aux.Tra);
+                aux = aux.Sig;
 
+            }
+            AD.Close();
+
+
+        }
+            
 
     }
 }
