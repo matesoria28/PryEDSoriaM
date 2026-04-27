@@ -103,6 +103,16 @@ namespace PryEDSoriaM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descarga1 {
+            get {
+                object obj = ResourceManager.GetObject("descarga1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_desktop_wallpaper_xp_picture_image_3417495 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-desktop-wallpaper-xp-picture-image_3417495", resourceCulture);

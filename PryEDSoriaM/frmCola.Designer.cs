@@ -47,12 +47,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstCola = new System.Windows.Forms.ListView();
             this.dgvCola = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstCola = new System.Windows.Forms.ListView();
             this.gbNuevoElemento.SuspendLayout();
             this.gbElementoEliminado.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -225,15 +225,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // lstCola
-            // 
-            this.lstCola.HideSelection = false;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(153, 168);
-            this.lstCola.TabIndex = 1;
-            this.lstCola.UseCompatibleStateImageBehavior = false;
-            // 
             // dgvCola
             // 
             this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -273,6 +264,15 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // lstCola
+            // 
+            this.lstCola.HideSelection = false;
+            this.lstCola.Location = new System.Drawing.Point(6, 19);
+            this.lstCola.Name = "lstCola";
+            this.lstCola.Size = new System.Drawing.Size(147, 168);
+            this.lstCola.TabIndex = 1;
+            this.lstCola.UseCompatibleStateImageBehavior = false;
+            // 
             // frmCola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +285,7 @@
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinamica Lineal - Cola";
+            this.Load += new System.EventHandler(this.frmCola_Load);
             this.gbNuevoElemento.ResumeLayout(false);
             this.gbNuevoElemento.PerformLayout();
             this.gbElementoEliminado.ResumeLayout(false);
@@ -312,7 +313,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvCola;
-        private System.Windows.Forms.ListView lstCola;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtTramite;
@@ -323,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.ListView lstCola;
     }
 }

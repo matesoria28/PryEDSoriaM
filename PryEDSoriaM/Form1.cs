@@ -68,5 +68,11 @@ namespace PryEDSoriaM
             frmCola Cola = new frmCola();
             Cola.ShowDialog();
         }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPila Cola = new frmPila();
+            Cola.ShowDialog();
+        }
     }
 }

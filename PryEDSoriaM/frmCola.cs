@@ -45,6 +45,7 @@ namespace PryEDSoriaM
 
                 ColaEspera.Eliminar();
                 ColaEspera.Recorrer(dgvCola);
+                ColaEspera.Recorrer(lstCola);
                 ColaEspera.Recorrer("Cola.csv");
    
             }
@@ -54,6 +55,16 @@ namespace PryEDSoriaM
                 lblNombre3.Text = "";
                 lblTramite3.Text = "";
             }
+        }
+
+        private void frmCola_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstCola_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace PryEDSoriaM
 {
-    internal class clsCola
+    internal class clsPila
     {
         //campos de la clase
         private clsNodo pri;
-        private clsNodo ult;
 
         //propiedades de la clase
         public clsNodo Primero
@@ -20,38 +19,30 @@ namespace PryEDSoriaM
             get { return pri; }
             set { pri = value; }
         }
-        public clsNodo Ultimo
-        {
-            get { return ult; }
-            set { ult = value; }
-        }
 
         public void Agregar(clsNodo nuevo)
         {
             if (Primero == null)
             {
                 Primero = nuevo;
-                Ultimo = nuevo;
+               
             }
             else
             {
-                Ultimo.Sig = nuevo;
-                Ultimo = nuevo;
+               nuevo.Sig = Primero;
+                Primero = nuevo;
             }
         }
-
         public void Eliminar()
         {
-            if (Primero == Ultimo)
+            if (Primero != null)
             {
-                Primero = null;
-                Ultimo = null;
-            }
-            else
-            { 
                 Primero = Primero.Sig;
+              
             }
+           
         }
+
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = Primero;
@@ -62,13 +53,13 @@ namespace PryEDSoriaM
                 aux = aux.Sig;
             }
         }
-        public void Recorrer(ListView Lista)
+        public void Recorrer(ListBox Lista)
         {
             clsNodo aux = Primero;
             Lista.Items.Clear();
             while (aux != null)
             {
-                Lista.Items.Add(aux.Nom);
+                Lista.Items.Add(aux.Cod);
                 aux = aux.Sig;
             }
         }
@@ -84,9 +75,9 @@ namespace PryEDSoriaM
         }
 
         public void Recorrer(String NombreArchivo)
-        { 
+        {
             clsNodo aux = Primero;
-            StreamWriter AD = new StreamWriter(NombreArchivo,false,Encoding.UTF8);
+            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
             AD.WriteLine("Lista de espera/n");
             AD.WriteLine("Codigo;Nombre;Tramite");
             while (aux != null)
@@ -103,7 +94,7 @@ namespace PryEDSoriaM
 
 
         }
-            
+
 
     }
 }
