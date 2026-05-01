@@ -24,55 +24,61 @@ namespace PryEDSoriaM
 
         private void datosDeDesarrolladorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDatosDesarrollador v = new frmDatosDesarrollador();
-            v.ShowDialog();
+            frmDatosDesarrollador formulario = new frmDatosDesarrollador();
+            formulario.ShowDialog();
 
         }
 
         private void mesesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMeses frmMeses = new frmMeses();
-            frmMeses.ShowDialog();
+            frmMeses formulario = new frmMeses();
+            formulario.ShowDialog();
 
         }
 
         private void coloresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmColores frmColores = new frmColores();
-            frmColores.ShowDialog();
+            frmColores formulario = new frmColores();
+            formulario.ShowDialog();
            
 
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmClientes frmClientes = new frmClientes();
-            frmClientes.ShowDialog();
+            frmClientes formulario = new frmClientes();
+            formulario.ShowDialog();
 
         }
 
         private void carreraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCarreras Carreras = new FrmCarreras();
-            Carreras.ShowDialog();
+            FrmCarreras formulario = new FrmCarreras();
+            formulario.ShowDialog();
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAlumnos Alumnos = new frmAlumnos();
-            Alumnos.ShowDialog();
+            frmAlumnos formulario = new frmAlumnos();
+            formulario.ShowDialog();
         }
 
         private void colaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCola Cola = new frmCola();
-            Cola.ShowDialog();
+            frmCola formulario = new frmCola();
+            formulario.ShowDialog();
         }
 
         private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPila Cola = new frmPila();
-            Cola.ShowDialog();
+            frmPila formulario= new frmPila();
+            formulario.ShowDialog();
+        }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaSimple formulario = new frmListaSimple();
+            formulario.ShowDialog();
         }
     }
 }

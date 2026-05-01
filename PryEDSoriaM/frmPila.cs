@@ -55,5 +55,10 @@ namespace PryEDSoriaM
                 lblTramite3.Text = "";
             }
         }
+
+        private void frmPila_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
