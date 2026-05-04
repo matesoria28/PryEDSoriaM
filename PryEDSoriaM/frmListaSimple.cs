@@ -69,15 +69,27 @@ namespace PryEDSoriaM
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
 
+            if (objLista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbLista.Text);
+                objLista.Eliminar(x);
+                objLista.Recorrer(dgvLista);
+                objLista.Recorrer(lstLista);
+                objLista.Recorrer(cmbLista);
+                
+            }
+            else
+            {
+                MessageBox.Show("La lista esta vacia");
+
+            }
+            btnEliminar.Enabled = false;
         }
 
+        private void frmListaSimple_Load(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }

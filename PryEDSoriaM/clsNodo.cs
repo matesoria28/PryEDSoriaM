@@ -36,7 +36,14 @@ namespace PryEDSoriaM
             set { sig = value; }
         }
 
-    }
+        private clsNodo ant;
+        public clsNodo anterior
+        {
+            get { return ant; }
+            set { ant = value; }
+        }
+
+    }  
 
 
 }
