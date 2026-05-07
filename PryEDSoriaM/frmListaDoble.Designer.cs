@@ -35,7 +35,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbElementoEliminado = new System.Windows.Forms.GroupBox();
-            this.cmbLista = new System.Windows.Forms.ComboBox();
+            this.cmbListaDoble = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigo2 = new System.Windows.Forms.Label();
             this.gbNuevoElemento = new System.Windows.Forms.GroupBox();
@@ -47,8 +47,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.gbListarDatos = new System.Windows.Forms.GroupBox();
-            this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.rbDescendente = new System.Windows.Forms.RadioButton();
+            this.rbAscendente = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).BeginInit();
@@ -107,7 +107,7 @@
             // 
             // gbElementoEliminado
             // 
-            this.gbElementoEliminado.Controls.Add(this.cmbLista);
+            this.gbElementoEliminado.Controls.Add(this.cmbListaDoble);
             this.gbElementoEliminado.Controls.Add(this.btnEliminar);
             this.gbElementoEliminado.Controls.Add(this.lblCodigo2);
             this.gbElementoEliminado.Location = new System.Drawing.Point(387, 12);
@@ -117,13 +117,13 @@
             this.gbElementoEliminado.TabStop = false;
             this.gbElementoEliminado.Text = "Elemento Eliminado";
             // 
-            // cmbLista
+            // cmbListaDoble
             // 
-            this.cmbLista.FormattingEnabled = true;
-            this.cmbLista.Location = new System.Drawing.Point(55, 22);
-            this.cmbLista.Name = "cmbLista";
-            this.cmbLista.Size = new System.Drawing.Size(139, 21);
-            this.cmbLista.TabIndex = 5;
+            this.cmbListaDoble.FormattingEnabled = true;
+            this.cmbListaDoble.Location = new System.Drawing.Point(55, 22);
+            this.cmbListaDoble.Name = "cmbListaDoble";
+            this.cmbListaDoble.Size = new System.Drawing.Size(139, 21);
+            this.cmbListaDoble.TabIndex = 5;
             // 
             // btnEliminar
             // 
@@ -188,6 +188,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTramite
             // 
@@ -227,17 +228,6 @@
             this.gbListarDatos.TabStop = false;
             this.gbListarDatos.Text = "Listar Datos";
             // 
-            // rbAscendente
-            // 
-            this.rbAscendente.AutoSize = true;
-            this.rbAscendente.Location = new System.Drawing.Point(12, 20);
-            this.rbAscendente.Name = "rbAscendente";
-            this.rbAscendente.Size = new System.Drawing.Size(82, 17);
-            this.rbAscendente.TabIndex = 0;
-            this.rbAscendente.TabStop = true;
-            this.rbAscendente.Text = "Ascendente";
-            this.rbAscendente.UseVisualStyleBackColor = true;
-            // 
             // rbDescendente
             // 
             this.rbDescendente.AutoSize = true;
@@ -248,6 +238,17 @@
             this.rbDescendente.TabStop = true;
             this.rbDescendente.Text = "Descendente";
             this.rbDescendente.UseVisualStyleBackColor = true;
+            // 
+            // rbAscendente
+            // 
+            this.rbAscendente.AutoSize = true;
+            this.rbAscendente.Location = new System.Drawing.Point(12, 20);
+            this.rbAscendente.Name = "rbAscendente";
+            this.rbAscendente.Size = new System.Drawing.Size(82, 17);
+            this.rbAscendente.TabIndex = 0;
+            this.rbAscendente.TabStop = true;
+            this.rbAscendente.Text = "Ascendente";
+            this.rbAscendente.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -273,6 +274,7 @@
             this.Controls.Add(this.gbNuevoElemento);
             this.Name = "frmListaDoble";
             this.Text = "Lista Doblemente Enlazada";
+            this.Load += new System.EventHandler(this.frmListaDoble_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).EndInit();
             this.gbElementoEliminado.ResumeLayout(false);
@@ -296,7 +298,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox gbElementoEliminado;
-        private System.Windows.Forms.ComboBox cmbLista;
+        private System.Windows.Forms.ComboBox cmbListaDoble;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblCodigo2;
         private System.Windows.Forms.GroupBox gbNuevoElemento;
