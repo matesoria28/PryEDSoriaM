@@ -124,6 +124,7 @@
             this.cmbListaDoble.Name = "cmbListaDoble";
             this.cmbListaDoble.Size = new System.Drawing.Size(139, 21);
             this.cmbListaDoble.TabIndex = 5;
+            this.cmbListaDoble.SelectedIndexChanged += new System.EventHandler(this.cmbListaDoble_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -133,6 +134,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblCodigo2
             // 
@@ -238,6 +240,7 @@
             this.rbDescendente.TabStop = true;
             this.rbDescendente.Text = "Descendente";
             this.rbDescendente.UseVisualStyleBackColor = true;
+            this.rbDescendente.CheckedChanged += new System.EventHandler(this.rbDescendente_CheckedChanged);
             // 
             // rbAscendente
             // 
@@ -249,6 +252,7 @@
             this.rbAscendente.TabStop = true;
             this.rbAscendente.Text = "Ascendente";
             this.rbAscendente.UseVisualStyleBackColor = true;
+            this.rbAscendente.CheckedChanged += new System.EventHandler(this.rbAscendente_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -273,6 +277,7 @@
             this.Controls.Add(this.gbElementoEliminado);
             this.Controls.Add(this.gbNuevoElemento);
             this.Name = "frmListaDoble";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Doblemente Enlazada";
             this.Load += new System.EventHandler(this.frmListaDoble_Load);
             this.groupBox3.ResumeLayout(false);

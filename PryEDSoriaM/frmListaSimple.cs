@@ -47,9 +47,7 @@ namespace PryEDSoriaM
             else
             {
                 btnAgregar.Enabled = false;
-
             }
-
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
@@ -90,6 +88,18 @@ namespace PryEDSoriaM
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbLista.Text =="") 
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Enabled = true;
+            }
         }
     }
 }

@@ -74,7 +74,7 @@ namespace PryEDSoriaM
             Combo.Items.Clear();
             while (aux != null)
             {
-                Combo.Items.Add(aux.Nom);
+                Combo.Items.Add(aux.Cod);
                 aux = aux.Sig;
             }
         }

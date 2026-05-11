@@ -80,5 +80,11 @@ namespace PryEDSoriaM
             frmListaSimple formulario = new frmListaSimple();
             formulario.ShowDialog();
         }
+
+        private void listaDobleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaDoble formulario = new frmListaDoble();
+            formulario.ShowDialog();
+        }
     }
 }
