@@ -143,6 +143,16 @@ namespace PryEDSoriaM.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2026_05_11_at_20_58_35 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2026-05-11 at 20.58.35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap windows_xp {
             get {
                 object obj = ResourceManager.GetObject("windows xp", resourceCulture);
