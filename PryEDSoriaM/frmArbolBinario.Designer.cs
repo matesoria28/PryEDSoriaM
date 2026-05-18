@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbListadoArbol = new System.Windows.Forms.GroupBox();
+            this.rbPostOrden = new System.Windows.Forms.RadioButton();
+            this.rbPreOrden = new System.Windows.Forms.RadioButton();
+            this.rbInOrden = new System.Windows.Forms.RadioButton();
             this.dgvArbol = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +50,6 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.btnEquilibrar = new System.Windows.Forms.Button();
-            this.rbInOrden = new System.Windows.Forms.RadioButton();
-            this.rbPreOrden = new System.Windows.Forms.RadioButton();
-            this.rbPostOrden = new System.Windows.Forms.RadioButton();
             this.gbListadoArbol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).BeginInit();
             this.gbElementoAEliminar.SuspendLayout();
@@ -68,6 +68,39 @@
             this.gbListadoArbol.TabIndex = 13;
             this.gbListadoArbol.TabStop = false;
             this.gbListadoArbol.Text = "Listado del arbol";
+            // 
+            // rbPostOrden
+            // 
+            this.rbPostOrden.AutoSize = true;
+            this.rbPostOrden.Location = new System.Drawing.Point(20, 128);
+            this.rbPostOrden.Name = "rbPostOrden";
+            this.rbPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.rbPostOrden.TabIndex = 3;
+            this.rbPostOrden.TabStop = true;
+            this.rbPostOrden.Text = "Post-Orden";
+            this.rbPostOrden.UseVisualStyleBackColor = true;
+            // 
+            // rbPreOrden
+            // 
+            this.rbPreOrden.AutoSize = true;
+            this.rbPreOrden.Location = new System.Drawing.Point(20, 86);
+            this.rbPreOrden.Name = "rbPreOrden";
+            this.rbPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.rbPreOrden.TabIndex = 2;
+            this.rbPreOrden.TabStop = true;
+            this.rbPreOrden.Text = "Pre-Orden";
+            this.rbPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // rbInOrden
+            // 
+            this.rbInOrden.AutoSize = true;
+            this.rbInOrden.Location = new System.Drawing.Point(20, 46);
+            this.rbInOrden.Name = "rbInOrden";
+            this.rbInOrden.Size = new System.Drawing.Size(66, 17);
+            this.rbInOrden.TabIndex = 1;
+            this.rbInOrden.TabStop = true;
+            this.rbInOrden.Text = "In-Orden";
+            this.rbInOrden.UseVisualStyleBackColor = true;
             // 
             // dgvArbol
             // 
@@ -180,6 +213,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblTramite
             // 
@@ -223,39 +257,6 @@
             this.btnEquilibrar.TabIndex = 15;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
-            // 
-            // rbInOrden
-            // 
-            this.rbInOrden.AutoSize = true;
-            this.rbInOrden.Location = new System.Drawing.Point(20, 46);
-            this.rbInOrden.Name = "rbInOrden";
-            this.rbInOrden.Size = new System.Drawing.Size(66, 17);
-            this.rbInOrden.TabIndex = 1;
-            this.rbInOrden.TabStop = true;
-            this.rbInOrden.Text = "In-Orden";
-            this.rbInOrden.UseVisualStyleBackColor = true;
-            // 
-            // rbPreOrden
-            // 
-            this.rbPreOrden.AutoSize = true;
-            this.rbPreOrden.Location = new System.Drawing.Point(20, 86);
-            this.rbPreOrden.Name = "rbPreOrden";
-            this.rbPreOrden.Size = new System.Drawing.Size(73, 17);
-            this.rbPreOrden.TabIndex = 2;
-            this.rbPreOrden.TabStop = true;
-            this.rbPreOrden.Text = "Pre-Orden";
-            this.rbPreOrden.UseVisualStyleBackColor = true;
-            // 
-            // rbPostOrden
-            // 
-            this.rbPostOrden.AutoSize = true;
-            this.rbPostOrden.Location = new System.Drawing.Point(20, 128);
-            this.rbPostOrden.Name = "rbPostOrden";
-            this.rbPostOrden.Size = new System.Drawing.Size(78, 17);
-            this.rbPostOrden.TabIndex = 3;
-            this.rbPostOrden.TabStop = true;
-            this.rbPostOrden.Text = "Post-Orden";
-            this.rbPostOrden.UseVisualStyleBackColor = true;
             // 
             // frmArbolBinario
             // 
