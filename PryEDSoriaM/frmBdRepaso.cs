@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PryEDSoriaM
 {
-    public partial class frmGrafo : Form
+    public partial class frmBdRepaso : Form
     {
-        public frmGrafo()
+        public frmBdRepaso()
         {
             InitializeComponent();
-        }
-
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

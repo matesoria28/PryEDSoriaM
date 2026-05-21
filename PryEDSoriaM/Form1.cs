@@ -92,5 +92,29 @@ namespace PryEDSoriaM
             frmArbolBinario formulario = new frmArbolBinario();
             formulario.ShowDialog();
         }
+
+        private void grafoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGrafo formulario = new frmGrafo();
+            formulario.ShowDialog();
+        }
+
+        private void consultaDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdConsultaSql formulario = new frmBdConsultaSql();
+            formulario.ShowDialog();
+        }
+
+        private void consultaDeUnaTablaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrBdConsultaTablas formulario = new fmrBdConsultaTablas();
+            formulario.ShowDialog();
+        }
+
+        private void operacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdOperaciones formulario = new frmBdOperaciones();
+            formulario.ShowDialog();
+        }
     }
 }

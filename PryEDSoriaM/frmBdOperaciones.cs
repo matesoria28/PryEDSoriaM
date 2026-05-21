@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace PryEDSoriaM
 {
-    public partial class frmGrafo : Form
+    public partial class frmBdOperaciones : Form
     {
-        public frmGrafo()
+        public frmBdOperaciones()
         {
             InitializeComponent();
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
