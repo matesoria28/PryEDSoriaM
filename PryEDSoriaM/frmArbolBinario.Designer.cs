@@ -37,7 +37,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbElementoAEliminar = new System.Windows.Forms.GroupBox();
-            this.cmbLista = new System.Windows.Forms.ComboBox();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblCodigo2 = new System.Windows.Forms.Label();
             this.gbNuevoElemento = new System.Windows.Forms.GroupBox();
@@ -48,7 +48,7 @@
             this.lblTramite = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.trvArbolBinario = new System.Windows.Forms.TreeView();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.gbListadoArbol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).BeginInit();
@@ -132,7 +132,7 @@
             // 
             // gbElementoAEliminar
             // 
-            this.gbElementoAEliminar.Controls.Add(this.cmbLista);
+            this.gbElementoAEliminar.Controls.Add(this.cmbCodigo);
             this.gbElementoAEliminar.Controls.Add(this.btnEliminar);
             this.gbElementoAEliminar.Controls.Add(this.lblCodigo2);
             this.gbElementoAEliminar.Location = new System.Drawing.Point(387, 12);
@@ -142,13 +142,13 @@
             this.gbElementoAEliminar.TabStop = false;
             this.gbElementoAEliminar.Text = "Elemento a Eliminar";
             // 
-            // cmbLista
+            // cmbCodigo
             // 
-            this.cmbLista.FormattingEnabled = true;
-            this.cmbLista.Location = new System.Drawing.Point(55, 22);
-            this.cmbLista.Name = "cmbLista";
-            this.cmbLista.Size = new System.Drawing.Size(139, 21);
-            this.cmbLista.TabIndex = 5;
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(55, 22);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(139, 21);
+            this.cmbCodigo.TabIndex = 5;
             // 
             // btnEliminar
             // 
@@ -242,12 +242,12 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo:";
             // 
-            // treeView1
+            // trvArbolBinario
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 13);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(152, 179);
-            this.treeView1.TabIndex = 14;
+            this.trvArbolBinario.Location = new System.Drawing.Point(13, 13);
+            this.trvArbolBinario.Name = "trvArbolBinario";
+            this.trvArbolBinario.Size = new System.Drawing.Size(152, 179);
+            this.trvArbolBinario.TabIndex = 14;
             // 
             // btnEquilibrar
             // 
@@ -264,7 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 407);
             this.Controls.Add(this.btnEquilibrar);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.trvArbolBinario);
             this.Controls.Add(this.gbListadoArbol);
             this.Controls.Add(this.gbElementoAEliminar);
             this.Controls.Add(this.gbNuevoElemento);
@@ -289,7 +289,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox gbElementoAEliminar;
-        private System.Windows.Forms.ComboBox cmbLista;
+        private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblCodigo2;
         private System.Windows.Forms.GroupBox gbNuevoElemento;
@@ -303,7 +303,7 @@
         private System.Windows.Forms.RadioButton rbPostOrden;
         private System.Windows.Forms.RadioButton rbPreOrden;
         private System.Windows.Forms.RadioButton rbInOrden;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView trvArbolBinario;
         private System.Windows.Forms.Button btnEquilibrar;
     }
 }

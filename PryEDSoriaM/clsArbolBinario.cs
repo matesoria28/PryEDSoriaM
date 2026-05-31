@@ -9,62 +9,136 @@ namespace PryEDSoriaM
 {
     internal class clsArbolBinario
     {
-        //creo el campo inicial del arbol. Lo llamamos raiz
-        private clsNodo Pri;
-
-        private clsNodo Raiz
+        //Campo inicial del arbol se llama raiz
+        private clsNodo primerNodo;
+        //Propiedad
+        public clsNodo Raiz
         {
-            get { return Pri; }
-            set { Pri = value; }
+            get { return primerNodo; }
+            set { primerNodo = value; }
         }
-
-        public void Agregar(clsNodo Nvo)
+        public void Agregar(clsNodo Nuevo)
         {
             if (Raiz == null)
             {
-                Raiz = Nvo;
+                Raiz = Nuevo;
             }
             else
             {
-                clsNodo P= Raiz; //Ant
-                clsNodo Aux=Raiz;
-                while (Aux != null)
+                clsNodo ant = Raiz;
+                clsNodo aux = Raiz;
+                while (aux != null)
                 {
-                    P = Aux;
-                    if (Nvo.Cod < Aux.Cod) Aux = Aux.Izquierdo;
-                    else Aux = Aux.Derecho;                  
+                    ant = aux;
+                    if (Nuevo.Cod < aux.Cod) aux = aux.Izquierdo; //Cuando el codigo sea menor a la raiz(que esta en aux) va a ir del lado izquierdo
+                    else aux = aux.Derecho; //si el codigo es mayor a la raiz, pasa al lado derecho del arbol
                 }
-                //Fuera del limiete
-                if (Nvo.Cod < P.Cod) P.Izquierdo = Nvo;
-                else P.Derecho = Nvo;
+                if (Nuevo.Cod < ant.Cod) ant.Izquierdo = Nuevo;
+                else ant.Derecho = Nuevo;
             }
-
         }
-
         public void Recorrer(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
             InOrdenAsc(Grilla, Raiz);
+
         }
 
-        private void InOrdenAsc(DataGridView Dgv, clsNodo R)
+        private void InOrdenAsc(DataGridView dgv, clsNodo R)
         {
-            if (R.Izquierdo !=null)InOrdenAsc(Dgv, R.Izquierdo);
-            Dgv.Rows.Add(R.Cod, R.Nom, R.Tra);
-            if(R.Derecho !=null)InOrdenAsc(Dgv, R.Derecho);
+            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); //El reocrrido es izquierda, raíz, derecha
+            dgv.Rows.Add(R.Cod, R.Nom, R.Tra);
+            if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
         }
 
-        public void Recorrer(ComboBox Lista)
+        //Sobrecarga recorrer para cargar vector
+        public void Recorrer(clsNodo[] vector)
         {
-            Lista.Items.Clear();
-            InOrdenAsc(Lista, Raiz);
+            int ind = 0; // Inicializamos el índice en 0
+            if (Raiz != null)
+            {
+                InOrdenAsc(vector, ref ind, Raiz);
+            }
         }
 
-        private void InOrdenAsc(ComboBox Lst, clsNodo R)
+        //Metodo recursivo InOrdenAsc para guardar en un vector
+        private void InOrdenAsc(clsNodo[] vec, ref int ind, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(Lst, R.Izquierdo);
-            Lst.Items.Add(R.Cod);
-            if (R.Derecho != null) InOrdenAsc(Lst, R.Derecho);
+            if (R.Izquierdo != null) InOrdenAsc(vec, ref ind, R.Izquierdo);
+            vec[ind] = R;
+            ind++;
+            if (R.Derecho != null) InOrdenAsc(vec, ref ind, R.Derecho);
+
+        }
+
+        //Recorrer PreOrden
+        public void RecorrerPreOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PreOrden(Grilla, Raiz);
+        }
+
+        //Procedimiento para mostrar en grilla PreOrden
+        private void PreOrden(DataGridView grilla, clsNodo R)
+        {
+            if (R != null) //Recorrido es raíz, izquierda y derecha
+            {
+                grilla.Rows.Add(R.Cod, R.Nom, R.Tra);
+                PreOrden(grilla, R.Izquierdo);
+                PreOrden(grilla, R.Derecho);
+            }
+        }
+
+        //Recorrer PostOrden
+        public void RecorrerPostOrden(DataGridView Grilla)
+        {
+            Grilla.Rows.Clear();
+            PostOrden(Grilla, Raiz);
+        }
+
+        //Procedimiento para mostrar en grilla PostOrden
+        private void PostOrden(DataGridView grilla, clsNodo R)
+        {
+            if (R != null) //Recorrido es izquierda, derecha y raíz
+            {
+                PostOrden(grilla, R.Izquierdo);
+                PostOrden(grilla, R.Derecho);
+                grilla.Rows.Add(R.Cod, R.Nom, R.Tra);
+            }
+        }
+
+        //Sobrecarga para recorrer el combo box 
+        public void Recorrer(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            InOrdenAsc(Combo, Raiz);
+        }
+
+
+        private void InOrdenAsc(ComboBox lst, clsNodo R)
+        {
+            if (R.Izquierdo != null) InOrdenAsc(lst, R.Izquierdo);
+            lst.Items.Add(R.Cod);
+            if (R.Derecho != null) InOrdenAsc(lst, R.Derecho);
+        }
+
+        //Recorrido para mostrar en un tree view
+        public void Recorrer(TreeView tree)
+        {
+            tree.Nodes.Clear();
+            TreeNode nodoPadre = new TreeNode("Árbol");
+            tree.Nodes.Add(nodoPadre);
+            PreOrden(Raiz, nodoPadre);
+            tree.ExpandAll();
+        }
+
+        private void PreOrden(clsNodo R, TreeNode nodoTreeView)
+        {
+            TreeNode nodoPadre = new TreeNode(R.Cod.ToString());
+            nodoTreeView.Nodes.Add(nodoPadre);
+            if (R.Izquierdo != null) PreOrden(R.Izquierdo, nodoPadre);
+            if (R.Derecho != null) PreOrden(R.Derecho, nodoPadre);
         }
     }
 }
+

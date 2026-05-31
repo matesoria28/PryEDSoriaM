@@ -179,7 +179,6 @@
             this.cmbDestino2.Name = "cmbDestino2";
             this.cmbDestino2.Size = new System.Drawing.Size(199, 21);
             this.cmbDestino2.TabIndex = 7;
-            this.cmbDestino2.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // cmbOrigen2
             // 
@@ -206,6 +205,7 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+//            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblPrecioResultado
             // 
