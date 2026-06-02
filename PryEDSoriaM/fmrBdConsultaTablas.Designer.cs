@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvConsultaBd = new System.Windows.Forms.DataGridView();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.lblTabla = new System.Windows.Forms.Label();
             this.btnListar = new System.Windows.Forms.Button();
             this.cmbTablaBd = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaBd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvConsultaBd
+            // dgvDatos
             // 
-            this.dgvConsultaBd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultaBd.Location = new System.Drawing.Point(12, 12);
-            this.dgvConsultaBd.Name = "dgvConsultaBd";
-            this.dgvConsultaBd.Size = new System.Drawing.Size(685, 364);
-            this.dgvConsultaBd.TabIndex = 0;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(12, 12);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.Size = new System.Drawing.Size(685, 364);
+            this.dgvDatos.TabIndex = 0;
             // 
             // lblTabla
             // 
@@ -60,10 +60,16 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // cmbTablaBd
             // 
             this.cmbTablaBd.FormattingEnabled = true;
+            this.cmbTablaBd.Items.AddRange(new object[] {
+            "Autor",
+            "Idioma",
+            "Libro",
+            "Pais"});
             this.cmbTablaBd.Location = new System.Drawing.Point(406, 394);
             this.cmbTablaBd.Name = "cmbTablaBd";
             this.cmbTablaBd.Size = new System.Drawing.Size(155, 21);
@@ -77,10 +83,10 @@
             this.Controls.Add(this.cmbTablaBd);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.lblTabla);
-            this.Controls.Add(this.dgvConsultaBd);
+            this.Controls.Add(this.dgvDatos);
             this.Name = "fmrBdConsultaTablas";
             this.Text = "Consulta de un tabla";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaBd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,7 +94,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvConsultaBd;
+        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Label lblTabla;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.ComboBox cmbTablaBd;

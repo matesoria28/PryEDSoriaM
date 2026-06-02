@@ -16,5 +16,12 @@ namespace PryEDSoriaM
         {
             InitializeComponent();
         }
+
+        clsBaseDatos x = new clsBaseDatos();
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            x.Listar(cmbTablaBd.Text, dgvDatos);
+        }
     }
 }
