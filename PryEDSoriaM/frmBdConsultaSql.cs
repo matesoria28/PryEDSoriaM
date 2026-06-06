@@ -16,5 +16,11 @@ namespace PryEDSoriaM
         {
             InitializeComponent();
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            clsBaseDatos sql = new clsBaseDatos();
+            sql.Listar(dgvConsultaSQL, txtConsultaSQL.Text);
+        }
     }
 }

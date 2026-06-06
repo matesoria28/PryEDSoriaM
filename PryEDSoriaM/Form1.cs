@@ -116,5 +116,11 @@ namespace PryEDSoriaM
             frmBdOperaciones formulario = new frmBdOperaciones();
             formulario.ShowDialog();
         }
+
+        private void consultasVariasConOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdRepaso formulario = new frmBdRepaso();
+            formulario.ShowDialog();
+        }
     }
 }

@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+//Librerias nuevas para manejar las bases de datos o espacios de nombre
+using System.Data;
+using System.Data.OleDb;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.OleDb; //Solamente para BD de access
 using System.Windows.Forms;
-using System.Drawing.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PryEDSoriaM
 {
     internal class clsBaseDatos
     {
-        private OleDbConnection conexion = new OleDbConnection();
-        private OleDbCommand comando = new OleDbCommand();
-        private OleDbDataAdapter adaptador = new OleDbDataAdapter();
+        private OleDbConnection conexion = new OleDbConnection();//Realizamos la conexión 
+        private OleDbCommand comando = new OleDbCommand();//El comando envia una orden    
+        private OleDbDataAdapter adaptador = new OleDbDataAdapter();//El adapter trae los datos
 
-        private string CadenaConexion1 = "Provider=Microsoft.jet.OLEDB.4.0;Data Source=Libreria.mdb";
+        private string CadenaConexion1 = "Provider=Microsoft.jet.OLEDB.4.0;Data Source=Libreria.mdb"; //Indica el tipo de base de datos y donde esta
         private string CadenaConexion2 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Libreria.mdb";
         //private string varSQL = "Select * from Libro";
 
@@ -46,7 +48,6 @@ namespace PryEDSoriaM
             }
 
         }
-
 
         public void Listar(String tabla, DataGridView Grilla)
         {

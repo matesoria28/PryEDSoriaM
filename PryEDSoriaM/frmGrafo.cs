@@ -71,10 +71,10 @@ namespace PryEDSoriaM
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Solo permite números (char.IsDigit) y la tecla de borrar (char.IsControl)
+            
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                e.Handled = true; // Bloquea cualquier otro caracter
+                e.Handled = true;
             }
         }
 
@@ -98,8 +98,10 @@ namespace PryEDSoriaM
             Int32 f = cmbOrigen.SelectedIndex;
             Int32 c = cmbDestino.SelectedIndex;
             Decimal p = Convert.ToDecimal(txtPrecio.Text);
+
             objGrafo.Agregar(f, c, p);
             objGrafo.MostrarTodo(dgvGrafo);
+
             Limpiar();
         }
 
@@ -107,6 +109,7 @@ namespace PryEDSoriaM
         {
             Int32 f = cmbOrigen2.SelectedIndex;
             Int32 c = cmbDestino2.SelectedIndex;
+
             lblPrecioResultado.Text = Convert.ToString(objGrafo.Consultar(f, c));
         }
 
@@ -173,6 +176,9 @@ namespace PryEDSoriaM
             }
         }
 
-     
+        private void frmGrafo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

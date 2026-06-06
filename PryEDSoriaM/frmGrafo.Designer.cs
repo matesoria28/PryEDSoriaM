@@ -205,7 +205,6 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
-//            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblPrecioResultado
             // 
@@ -390,6 +389,7 @@
             this.Name = "frmGrafo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Operaciones en un Grafo";
+            this.Load += new System.EventHandler(this.frmGrafo_Load);
             this.gbCargarDatos.ResumeLayout(false);
             this.gbCargarDatos.PerformLayout();
             this.gbConsultaDatos.ResumeLayout(false);

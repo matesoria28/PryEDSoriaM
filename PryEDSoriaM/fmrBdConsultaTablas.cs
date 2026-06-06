@@ -17,11 +17,17 @@ namespace PryEDSoriaM
             InitializeComponent();
         }
 
-        clsBaseDatos x = new clsBaseDatos();
+        
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            x.Listar(cmbTablaBd.Text, dgvDatos);
+            clsBaseDatos bd = new clsBaseDatos();
+            bd.Listar(cmbTablaBd.Text, dgvDatos);
+        }
+
+        private void fmrBdConsultaTablas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

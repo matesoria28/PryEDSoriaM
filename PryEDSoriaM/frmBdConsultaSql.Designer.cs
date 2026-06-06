@@ -60,6 +60,7 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // dgvConsultaSQL
             // 
@@ -81,6 +82,7 @@
             this.Name = "frmBdConsultaSql";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de la base de datos";
+//            this.Load += new System.EventHandler(this.frmBdConsultaSql_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaSQL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

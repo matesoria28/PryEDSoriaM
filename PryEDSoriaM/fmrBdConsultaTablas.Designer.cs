@@ -86,6 +86,7 @@
             this.Controls.Add(this.dgvDatos);
             this.Name = "fmrBdConsultaTablas";
             this.Text = "Consulta de un tabla";
+            this.Load += new System.EventHandler(this.fmrBdConsultaTablas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
