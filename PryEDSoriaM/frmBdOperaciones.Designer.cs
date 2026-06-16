@@ -85,7 +85,6 @@
             this.btnProyeccionMultiatributo.TabIndex = 1;
             this.btnProyeccionMultiatributo.Text = "Proyeccion Multiatributo";
             this.btnProyeccionMultiatributo.UseVisualStyleBackColor = true;
-            this.btnProyeccionMultiatributo.Click += new System.EventHandler(this.btnProyeccionMultiatributo_Click);
             // 
             // btnProyeccionSimple
             // 
@@ -95,7 +94,6 @@
             this.btnProyeccionSimple.TabIndex = 0;
             this.btnProyeccionSimple.Text = "Proyeccion Simple";
             this.btnProyeccionSimple.UseVisualStyleBackColor = true;
-            this.btnProyeccionSimple.Click += new System.EventHandler(this.btnProyeccionSimple_Click);
             // 
             // gbSeleccion
             // 
@@ -117,7 +115,6 @@
             this.btnSeleccionPorConvulcion.TabIndex = 2;
             this.btnSeleccionPorConvulcion.Text = "Seleccion por Convulcion";
             this.btnSeleccionPorConvulcion.UseVisualStyleBackColor = true;
-            this.btnSeleccionPorConvulcion.Click += new System.EventHandler(this.btnSeleccionPorConvulcion_Click);
             // 
             // btnSeleccionMultiatributo
             // 
@@ -127,7 +124,6 @@
             this.btnSeleccionMultiatributo.TabIndex = 1;
             this.btnSeleccionMultiatributo.Text = "Seleccion Multiatributo";
             this.btnSeleccionMultiatributo.UseVisualStyleBackColor = true;
-            this.btnSeleccionMultiatributo.Click += new System.EventHandler(this.btnSeleccionMultiatributo_Click);
             // 
             // btnSleccionSimple
             // 
@@ -137,7 +133,6 @@
             this.btnSleccionSimple.TabIndex = 0;
             this.btnSleccionSimple.Text = "Seleccion Simple";
             this.btnSleccionSimple.UseVisualStyleBackColor = true;
-            this.btnSleccionSimple.Click += new System.EventHandler(this.btnSleccionSimple_Click);
             // 
             // gbAlgebraicas
             // 
@@ -150,7 +145,6 @@
             this.gbAlgebraicas.TabIndex = 0;
             this.gbAlgebraicas.TabStop = false;
             this.gbAlgebraicas.Text = "Operaciones Algebraicas";
-            this.gbAlgebraicas.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnDiferencia
             // 
@@ -194,7 +188,7 @@
             this.Name = "frmBdOperaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base de datos";
-            this.Load += new System.EventHandler(this.frmBdOperaciones_Load);
+//            this.Load += new System.EventHandler(this.frmBdOperaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBdOperaciones)).EndInit();
             this.gbProyeccion.ResumeLayout(false);
             this.gbSeleccion.ResumeLayout(false);

@@ -22,5 +22,16 @@ namespace PryEDSoriaM
             clsBaseDatos sql = new clsBaseDatos();
             sql.Listar(dgvConsultaSQL, txtConsultaSQL.Text);
         }
+
+        private void frmBdConsultaSql_Load(object sender, EventArgs e)
+        {
+            btnListar.Enabled = false;
+        }
+
+        private void txtSQL_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConsultaSQL.Text != "") btnListar.Enabled = true;
+            else btnListar.Enabled = false;
+        }
     }
 }

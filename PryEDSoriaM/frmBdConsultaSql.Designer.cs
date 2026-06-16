@@ -82,7 +82,7 @@
             this.Name = "frmBdConsultaSql";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de la base de datos";
-//            this.Load += new System.EventHandler(this.frmBdConsultaSql_Load);
+            this.Load += new System.EventHandler(this.frmBdConsultaSql_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaSQL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -112,5 +112,34 @@ namespace PryEDSoriaM
             clsNodo x = new clsNodo();
             if (rbPostOrden.Checked) objArbol.RecorrerPostOrden(dgvArbol);
         }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            if (objArbol.Raiz == null)
+            {
+                MessageBox.Show("El árbol está vacío.");
+                return;
+            }
+
+            objArbol.Equilibrar();
+            objArbol.Recorrer(dgvArbol);
+            objArbol.Recorrer(cmbCodigo);
+            objArbol.Recorrer(trvArbolBinario);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(cmbCodigo.SelectedItem);
+
+            objArbol.Eliminar(codigo);
+            objArbol.Recorrer(dgvArbol);
+            objArbol.Recorrer(cmbCodigo);
+            objArbol.Recorrer(trvArbolBinario);
+
+            // Deshabilito botón hasta que se seleccione otro código
+            btnEliminar.Enabled = false;
+        }
+
+
     }
 }

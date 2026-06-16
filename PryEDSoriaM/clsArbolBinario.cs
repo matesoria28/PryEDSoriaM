@@ -9,9 +9,9 @@ namespace PryEDSoriaM
 {
     internal class clsArbolBinario
     {
-        //Campo inicial del arbol se llama raiz
+        
         private clsNodo primerNodo;
-        //Propiedad
+        
         public clsNodo Raiz
         {
             get { return primerNodo; }
@@ -30,38 +30,79 @@ namespace PryEDSoriaM
                 while (aux != null)
                 {
                     ant = aux;
-                    if (Nuevo.Cod < aux.Cod) aux = aux.Izquierdo; //Cuando el codigo sea menor a la raiz(que esta en aux) va a ir del lado izquierdo
-                    else aux = aux.Derecho; //si el codigo es mayor a la raiz, pasa al lado derecho del arbol
+                    if (Nuevo.Cod < aux.Cod) aux = aux.Izquierdo; 
+                    else aux = aux.Derecho; 
                 }
                 if (Nuevo.Cod < ant.Cod) ant.Izquierdo = Nuevo;
                 else ant.Derecho = Nuevo;
             }
         }
+        public void Eliminar(Int32 codigo)
+        {
+            Raiz = EliminarNodo(Raiz, codigo);
+        }
+
+       
+        private clsNodo EliminarNodo(clsNodo R, Int32 codigo)
+        {
+            if (R == null)
+            {
+                MessageBox.Show("El código no existe en el árbol.");
+                return null;
+            }
+            if (codigo < R.Cod) R.Izquierdo = EliminarNodo(R.Izquierdo, codigo);       
+            else if (codigo > R.Cod) R.Derecho = EliminarNodo(R.Derecho, codigo); 
+
+            else
+            {                
+                if (R.Izquierdo == null && R.Derecho == null) return null;
+                else if (R.Izquierdo == null) return R.Derecho;
+               
+                else if (R.Derecho == null) return R.Izquierdo;
+
+               
+                else
+                {
+                    clsNodo sucesor = BuscarMinimo(R.Derecho);
+                    R.Cod = sucesor.Cod;
+                    R.Nom = sucesor.Nom;
+                    R.Tra = sucesor.Tra;
+                    R.Derecho = EliminarNodo(R.Derecho, sucesor.Cod);
+                }
+            }
+            return R;
+        }
+        private clsNodo BuscarMinimo(clsNodo R)
+        {
+            while (R.Izquierdo != null)
+                R = R.Izquierdo;
+            return R;
+        }
+
         public void Recorrer(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
             InOrdenAsc(Grilla, Raiz);
-
         }
 
         private void InOrdenAsc(DataGridView dgv, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); //El reocrrido es izquierda, raíz, derecha
+            if (R.Izquierdo != null) InOrdenAsc(dgv, R.Izquierdo); 
             dgv.Rows.Add(R.Cod, R.Nom, R.Tra);
             if (R.Derecho != null) InOrdenAsc(dgv, R.Derecho);
         }
 
-        //Sobrecarga recorrer para cargar vector
+        
         public void Recorrer(clsNodo[] vector)
         {
-            int ind = 0; // Inicializamos el índice en 0
+            int ind = 0; 
             if (Raiz != null)
             {
                 InOrdenAsc(vector, ref ind, Raiz);
             }
         }
 
-        //Metodo recursivo InOrdenAsc para guardar en un vector
+       
         private void InOrdenAsc(clsNodo[] vec, ref int ind, clsNodo R)
         {
             if (R.Izquierdo != null) InOrdenAsc(vec, ref ind, R.Izquierdo);
@@ -71,17 +112,16 @@ namespace PryEDSoriaM
 
         }
 
-        //Recorrer PreOrden
         public void RecorrerPreOrden(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
             PreOrden(Grilla, Raiz);
         }
 
-        //Procedimiento para mostrar en grilla PreOrden
+       
         private void PreOrden(DataGridView grilla, clsNodo R)
         {
-            if (R != null) //Recorrido es raíz, izquierda y derecha
+            if (R != null) 
             {
                 grilla.Rows.Add(R.Cod, R.Nom, R.Tra);
                 PreOrden(grilla, R.Izquierdo);
@@ -89,17 +129,17 @@ namespace PryEDSoriaM
             }
         }
 
-        //Recorrer PostOrden
+        
         public void RecorrerPostOrden(DataGridView Grilla)
         {
             Grilla.Rows.Clear();
             PostOrden(Grilla, Raiz);
         }
 
-        //Procedimiento para mostrar en grilla PostOrden
+      
         private void PostOrden(DataGridView grilla, clsNodo R)
         {
-            if (R != null) //Recorrido es izquierda, derecha y raíz
+            if (R != null) 
             {
                 PostOrden(grilla, R.Izquierdo);
                 PostOrden(grilla, R.Derecho);
@@ -107,7 +147,7 @@ namespace PryEDSoriaM
             }
         }
 
-        //Sobrecarga para recorrer el combo box 
+        
         public void Recorrer(ComboBox Combo)
         {
             Combo.Items.Clear();
@@ -122,7 +162,7 @@ namespace PryEDSoriaM
             if (R.Derecho != null) InOrdenAsc(lst, R.Derecho);
         }
 
-        //Recorrido para mostrar en un tree view
+        
         public void Recorrer(TreeView tree)
         {
             tree.Nodes.Clear();
@@ -139,6 +179,37 @@ namespace PryEDSoriaM
             if (R.Izquierdo != null) PreOrden(R.Izquierdo, nodoPadre);
             if (R.Derecho != null) PreOrden(R.Derecho, nodoPadre);
         }
+
+        
+        public void Equilibrar()
+        {
+            int cantidad = ContarNodos(Raiz);
+            if (cantidad <= 1) return;
+            clsNodo[] vector = new clsNodo[cantidad];
+            Recorrer(vector);
+            Raiz = null;
+            InsertarBalanceado(vector, 0, cantidad - 1);
+        }
+        private int ContarNodos(clsNodo R)
+        {
+            if (R == null) return 0;
+            return 1 + ContarNodos(R.Izquierdo) + ContarNodos(R.Derecho);
+        }
+        private void InsertarBalanceado(clsNodo[] vector, int inicio, int fin)
+        {
+            if (inicio > fin) return;
+
+            int medio = (inicio + fin) / 2;
+
+            vector[medio].Izquierdo = null;
+            vector[medio].Derecho = null;
+
+            Agregar(vector[medio]);
+
+            InsertarBalanceado(vector, inicio, medio - 1);
+            InsertarBalanceado(vector, medio + 1, fin);
+        }
+
     }
 }
 

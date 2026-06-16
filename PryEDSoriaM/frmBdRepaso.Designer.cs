@@ -92,6 +92,7 @@
             this.Name = "frmBdRepaso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Repaso de Operaciones de Base de Datos";
+            this.Load += new System.EventHandler(this.frmBdRepaso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOperacionesBD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

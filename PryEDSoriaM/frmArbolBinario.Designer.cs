@@ -271,6 +271,8 @@
             this.Name = "frmArbolBinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructuras Ramificadas - Arbol Binario";
+//
+//this.Load += new System.EventHandler(this.frmArbolBinario_Load);
             this.gbListadoArbol.ResumeLayout(false);
             this.gbListadoArbol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArbol)).EndInit();

@@ -17,29 +17,20 @@ namespace PryEDSoriaM
             InitializeComponent();
         }
         clsBaseDatos sql = new clsBaseDatos();
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
 
-        }
-
-        private void frmBdOperaciones_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnProyeccionSimple_Click(object sender, EventArgs e)
+        private void btnProSimple_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT TITULO " +
-               "FROM LIBRO " +
-               "ORDER BY 1 DESC";
+                "FROM LIBRO " +
+                "ORDER BY 1 DESC";
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
-        private void btnProyeccionMultiatributo_Click(object sender, EventArgs e)
+        private void btnProMultiAtributo_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT TITULO, AÑO " +
-              "FROM LIBRO " +
-              "ORDER BY TITULO ASC";
+                "FROM LIBRO " +
+                "ORDER BY TITULO ASC";
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
@@ -51,54 +42,63 @@ namespace PryEDSoriaM
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
-        private void btnSleccionSimple_Click(object sender, EventArgs e)
+        private void btnSelSimple_Click(object sender, EventArgs e)
         {
-
+            String varSql = "SELECT TITULO " +
+                "FROM LIBRO " +
+                "WHERE  IDPAIS = 3 ";
+            sql.Listar(varSql, dgvBdOperaciones);
         }
 
-        private void btnSeleccionMultiatributo_Click(object sender, EventArgs e)
+        private void btnSelMultiAtributo_Click(object sender, EventArgs e)
         {
-
+            String varSql = "SELECT TITULO, PRECIO " +
+                "FROM LIBRO " +
+                "WHERE PRECIO > 400 " +
+                "ORDER BY 1 DESC";
+            sql.Listar(varSql, dgvBdOperaciones);
         }
 
-        private void btnSeleccionPorConvulcion_Click(object sender, EventArgs e)
+        private void btnConvolucion_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT * " +
-               "FROM (SELECT * FROM LIBRO WHERE idIdioma > 1) as X " +
-               "WHERE IdPais = 2 ";
+                "FROM (SELECT * FROM LIBRO WHERE idIdioma > 1) as X " +
+                "WHERE IdPais = 2 ";
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
         private void btnUnion_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT *  " +
-               "FROM LIBRO " +
-               "WHERE IDIDIOMA = 1 " +
-               "UNION " +
-               "SELECT * " +
-               "FROM LIBRO " +
-               "WHERE IDIDIOMA = 2";
+                "FROM LIBRO " +
+                "WHERE IDIDIOMA = 1 " +
+                "UNION " +
+                "SELECT * " +
+                "FROM LIBRO " +
+                "WHERE IDIDIOMA = 2";
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
         private void btnInterseccion_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT * FROM LIBRO " +
-    " WHERE IDIDIOMA = 2 AND " +
-    "IDLIBRO IN " +
-    " (SELECT IDLIBRO FROM LIBRO WHERE IDPAIS = 3) " +
-    " ORDER BY 1 ASC";
+                " WHERE IDIDIOMA = 2 AND " +
+                "IDLIBRO IN " +
+                " (SELECT IDLIBRO FROM LIBRO WHERE IDPAIS = 3) " +
+                " ORDER BY 1 ASC";
             sql.Listar(varSql, dgvBdOperaciones);
         }
 
         private void btnDiferencia_Click(object sender, EventArgs e)
         {
             String varSql = "SELECT * FROM LIBRO " +
-               " WHERE IDIDIOMA = 2 AND " +
-               "IDIDIOMA NOT IN " +
-               " (SELECT IDLIBRO FROM LIBRO WHERE IDPAIS = 3) " +
-               " ORDER BY 1 ASC";
+                " WHERE IDIDIOMA = 2 AND " +
+                "IDIDIOMA NOT IN " +
+                " (SELECT IDLIBRO FROM LIBRO WHERE IDPAIS = 3) " +
+                " ORDER BY 1 ASC";
             sql.Listar(varSql, dgvBdOperaciones);
         }
+
+      
     }
 }
